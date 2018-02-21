@@ -1,0 +1,17 @@
+Options +FollowSymlinks
+RewriteEngine On
+RewriteBase /seguimiento/
+
+Options All -Indexes
+ErrorDocument 404 /seguimiento/error/404.html
+ErrorDocument 403 /seguimiento/error/404.html
+
+#si carpeta existe a la carpeta
+RewriteCond %{SCRIPT_FILENAME} !-d
+#si archivo existe al archivo
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+RewriteRule ^(.*)$ index.php?view=$1 [L]
+#/?sec=curso&cat=wordpress
+#/curso/wordpress
+# RewriteRule ^(.*)/(.*)$ index.php?sec=$1&$cat=$2 [L]
