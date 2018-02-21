@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow:400');
+@import url('https://fonts.googleapis.com/css?family=Exo+2:300');
+*{
+    
+}
+.bg-blue{
+    background: linear-gradient(#1429a2,#3d52c7,#2145a7,#070f38);
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    position: fixed;
+}
+.content-mother{
+    margin-top: 150px;
+}
+.small-top-space{
+    margin-top: 15px;
+}
+.white{
+    background: white;
+}
+.margin_auto{
+    margin: auto;
+}
+.remove_float{
+    float: none;
+}
+.content_width{
+    max-width: 450px;
+    padding:30px;
+}
+.content_width h2{
+    padding-bottom: 20px;
+    font-size: 33px;
+    font-family: 'Barlow', sans-serif;
+}
+.border-radius-8{
+    border-radius: 8px;
+}
+.display-flex{
+    display: inline-block;
+}
+.input-content{
+    display: flex;
+    height: 50px;
+    padding-bottom: 5px;
+    padding-top:5px;
+    padding-right:5px;
+    padding-left:10px;
+    border-radius: 7px;
+    border: 1px solid rgba(153, 153, 153, 0.54);
+    font-family: 'Exo 2', sans-serif;
+}
+.input-content img{
+    height: 30px;
+    margin-top: 3px;
+    width: 30px;
+}
+.input-content-input{
+    width: 90%;
+    height: 100%;
+    font-size: 18px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    border: none;
+}
+.input-content-input:focus{
+    outline: none;
+}
