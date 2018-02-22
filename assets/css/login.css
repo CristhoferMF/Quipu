@@ -4,41 +4,82 @@
     
 }
 .bg-blue{
-    background: linear-gradient(#1429a2,#3d52c7,#2145a7,#070f38);
+    background: linear-gradient(#3a4cb9,#3b4baf,#3456b4,#2950ba);
     height: 100vh;
     width: 100%;
     top: 0;
     position: fixed;
 }
 .content-mother{
-    margin-top: 150px;
+    margin-top: 200px;
+    margin-bottom:100px;
 }
 .small-top-space{
-    margin-top: 15px;
+    margin-top: 18px;
 }
 .white{
     background: white;
 }
+.btn-iniciar{
+    color: white;
+    background: #2b58cf;
+    border: none;
+    font-size: 18px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+footer{
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    font-size: 17px;
+    background: #2b58cf;
+    padding: 20px;
+    font-family: 'Barlow', sans-serif;
+    text-align: center;
+}
 .margin_auto{
     margin: auto;
 }
-.remove_float{
+.remove-float{
     float: none;
 }
 .content_width{
-    max-width: 450px;
+    max-width: 430px;
     padding:30px;
 }
-.content_width h2{
-    padding-bottom: 20px;
-    font-size: 33px;
+.bienvenido{
+    margin: auto;
+    font-family: 'Exo 2', sans-serif;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.bienvenido .span-h1{
+    color: #2753c6;
+}
+.bienvenido .span-h3{
+    color: #646464;
     font-family: 'Barlow', sans-serif;
 }
+.content_width h2{
+    padding-bottom: 30px;
+    font-size: 27px;
+    font-family: 'Barlow', sans-serif;
+    color: #2b58cf;
+}
+
 .border-radius-8{
     border-radius: 8px;
 }
 .display-flex{
-    display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 .input-content{
     display: flex;
@@ -52,9 +93,9 @@
     font-family: 'Exo 2', sans-serif;
 }
 .input-content img{
-    height: 30px;
-    margin-top: 3px;
-    width: 30px;
+    height: 23px;
+    margin-top:6px;
+    width: 23px;
 }
 .input-content-input{
     width: 90%;
@@ -68,4 +109,44 @@
 }
 .input-content-input:focus{
     outline: none;
+}
+.input-content-submit{
+    height: 45px;
+    width: 100%;
+    background: #2b58cf;
+    color: white;
+    border: none;
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+    border-radius: 7px;
+    margin-bottom: 20px;
+}
+.forgot-pass{
+    margin-top: 25px;
+    font-size: 16px;
+    font-family: 'Barlow', sans-serif;
+}
+.forgot-pass a{
+    margin-left: 5px;
+}
+@media only screen and (min-width: 500px) {
+    .span-h1 {
+        font-size: 80px;
+    }
+    .span-h3 {
+        font-size: 20px;
+    }
+}
+@media only screen and (max-height: 400px) {
+    footer{
+        display: none;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .span-h1 {
+        font-size: 40px;
+    }
+    .span-h3 {
+        font-size: 15px;
+    }
 }
