@@ -1,0 +1,27 @@
+MOSTRAR DATOS TABLAS(EMPRESA-ALUMNO):
+	SELECT estudiante.semestre,estudiante.ciclo,estudiante.cfp,estudiante.carrera,estudiante.dia_clase,estudiante.apellidos,estudiante.nombres,estudiante.celular,estudiante.email,
+		empresa.ruc,empresa.razon_social,sede.id_sede,sede.departamento,sede.provincia,sede.distrito,sede.direccion_fiscal,sede.telefono,sede.email,
+		especialista.id_senati,especialista.apellidos,especialista.nombres
+	FROM historico 
+		join sede on sede.id_sede=historico.id_sede_historico
+		join empresa on empresa.ruc=sede.ruc_empresa_sede
+		join monitor on monitor.dni_monitor=historico.dni_monitor_historico
+    		join estudiante on estudiante.id=historico.id_estudiante_historico
+    		join especialista on especialista.id_senati=estudiante.id_especialista
+			where historico.estado="ACTIVO"
+AGREGANDO SIN EMPRESA
+	insert into empresa(ruc,razon_social,estado) values('00000','SIN EMPRESA','ACTIVO')
+	insert into sede(id_sede,ruc_empresa_sede,estado) values('00000-0','00000','ACTIVO')
+AGREGANDO SIN MONITOR
+	insert into monitor(dni_monitor,id_sede_monitor,apellidos,nombres) 
+	values('00000-0','00000-0','SIN MONITOR','SIN MONITOR')
+AGREGANDO SIN ESPECIALISTA
+	insert into especialista values(00000,'SIN ESPECIALISTA',NULL,NULL,NULL)
+INSERTAR ALUMNO
+	insert into historico values(NULL,1,'00000-0',$ID,...,'ACTIVO')
+
+
+SEMESTRE|CICLO|CFP|CARRERA|BLOQUE|DIA DE CLASE|APELLIDOS Y NOMBRES|
+CELULAR ALUMNO|EMAIL ALUMNO|RUC EMPRESA|RAZON SOCIAL|SEDE|DEPARTAMENTO|PROVINCIA|DISTRITO|DIRECCION SEDE|TELEFONO SEDE|EMAIL_SEDE
+DNI MONITOR| APELLIDOS Y NOMBRES| TELEFONO MONITOR
+ID ESPECIALISTA|APELLIDOS Y NOMBRES
