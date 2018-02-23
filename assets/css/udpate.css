@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow:400');
+@import url('https://fonts.googleapis.com/css?family=Exo+2:300');
+*{
+
+}
+
+input[type="text"]{
+    border-radius: 7px;
+    padding: 7px;
+    border: 1px solid #999;
+    width: 90%;
+    font-family: 'Exo 2', sans-serif;
+}

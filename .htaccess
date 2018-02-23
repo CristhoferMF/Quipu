@@ -12,6 +12,7 @@ RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
 
 RewriteRule ^(.*)$ index.php?view=$1 [L]
+
 #/?sec=curso&cat=wordpress
 #/curso/wordpress
-# RewriteRule ^(.*)/(.*)$ index.php?sec=$1&$cat=$2 [L]
+#RewriteRule ^(.*)/(.*)$ index.php?view=$1&$cat=$2 [L]

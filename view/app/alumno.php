@@ -11,7 +11,7 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Seguimiento | Login</title>
+	<title>Seguimiento | Alumno <?php echo $result[14]?></title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -34,18 +34,18 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class=""><a href="../app">Home</a></li>
-              <li><a href="edit">Editar Informacion</a></li>
+              <!--li class=""><a href="../app">Home</a></li-->
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Acciones <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
+                  <li><a href="<?php echo $result[14]?>/edit">Editar Información</a></li>
+                  <li><a href="<?php echo $result[14]?>/historial">Ver Historial</a></li>
+                  <li><a href="#">Dar de baja</a></li>
                   <li role="separator" class="divider"></li>
-                  <li class="dropdown-header">Nav header</li>
-                  <li><a href="#">Separated link</a></li>
-                  <li><a href="#">One more separated link</a></li>
+                  <li class="dropdown-header">Empresa</li>
+                  <li><a href="#">Cambiar de empresa</a></li>
+                  <li><a href="#">Cambiar monitor</a></li>
+                  <li><a href="#">Asignar especialista</a></li>
                 </ul>
               </li>
             </ul>
