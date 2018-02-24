@@ -84,5 +84,18 @@ WHERE id_estudiante_historico='$id_es'";
         return $query=$this->mysqli->query($query_tab);
   
     }
+    public function create_alumno($id,$apellidos,$nombres,$cfp,$carrera,$semestre,$bloque,$ciclo,$diaclase,$telefono,$celular,$email,$domicilio,$horario,$puesto,$empresa,$iniciosem,$finsemin){
+        $query_tab="INSERT INTO estudiante values($id,0,'$apellidos','$nombres','$cfp','$carrera','$semestre','$bloque','$ciclo','$diaclase','$telefono','$celular','$email','$domicilio','$horario','$puesto','$empresa','$iniciosem','$finsemin','ACTIVO')";
+        $query_tab2="INSERT INTO historico values(NULL,0,'00000-0',$id,'00000-0','$cfp','$carrera','$bloque','$ciclo',NULL,NULL,NULL,'$semestre','ACTIVO')";
+        $query=$this->mysqli->query($query_tab);
+        if($query){
+            $query2=$this->mysqli->query($query_tab2);
+        }else{
+            return "Error";
+        }
+        //echo $query_tab;
+        //echo $query_tab2;
+    }
 }
+    
 ?>

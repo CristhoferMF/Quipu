@@ -37,18 +37,14 @@ require_once '../../controller/estudiantes_controller.php';
              
              <!-- Fin buscador-->
               <li class=""><a href="../app">Ir a Empresas</a></li>
-              <li class=""><a href="../app">Ir a Alumnos</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Acciones <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Agregar Alumnos</a></li>
-                  <li><a href="#">Ver Historial</a></li>
-                  <li><a href="#">Dar de baja</a></li>
+                    <li class="dropdown-header">Alumno</li>
+                  <li><a href="add_alumno.php">Agregar Alumno</a></li>
                   <li role="separator" class="divider"></li>
-                  <li class="dropdown-header">Empresa</li>
-                  <li><a href="#">Cambiar de empresa</a></li>
-                  <li><a href="#">Cambiar monitor</a></li>
-                  <li><a href="#">Asignar especialista</a></li>
+                  <li class="dropdown-header">Especialista</li>
+                  <li><a href="#">Agregar Especialista</a></li>
                 </ul>
               </li>
             </ul>
