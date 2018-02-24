@@ -2,7 +2,7 @@
 require_once '../../controller/info_estudiantes_controller.php';
 //echo $_GET['alumno'];
 if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
-    header("location:index.php");
+    header("location:../app");
 }else{
     //echo "bien";
     $result=mysqli_fetch_array($info_estudiante);
@@ -43,7 +43,7 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
                   <li><a href="#">Dar de baja</a></li>
                   <li role="separator" class="divider"></li>
                   <li class="dropdown-header">Empresa</li>
-                  <li><a href="#">Cambiar de empresa</a></li>
+                  <li><a href="<?php echo $result[14]?>/nueva_empresa">Cambiar de empresa</a></li>
                   <li><a href="#">Cambiar monitor</a></li>
                   <li><a href="#">Asignar especialista</a></li>
                 </ul>

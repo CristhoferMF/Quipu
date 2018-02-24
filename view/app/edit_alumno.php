@@ -36,26 +36,13 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li class=""><a href="../<?php echo $result[14]?>">Ir atras</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Acciones <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="<?php echo $result[14]?>/edit">Editar Información</a></li>
-                  <li><a href="<?php echo $result[14]?>/historial">Ver Historial</a></li>
-                  <li><a href="#">Dar de baja</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li class="dropdown-header">Empresa</li>
-                  <li><a href="#">Cambiar de empresa</a></li>
-                  <li><a href="#">Cambiar monitor</a></li>
-                  <li><a href="#">Asignar especialista</a></li>
-                </ul>
-              </li>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
       <div class="panel panel-primary">
        <div class="panel-heading">EDITAR DE ALUMNO</div>
-  <div class="panel-body text-center" style="overflow-y:auto;">
+  <div class="panel-body text-center" style="overflow-x:auto;">
         <h1>ID: <?php echo $result[14]?></h1>
         <table class="table table_bordered table-hover" style="max-width:850px;margin:auto;">
         <tbody>
