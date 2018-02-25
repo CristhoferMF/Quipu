@@ -19,13 +19,10 @@ $puesto=$_POST['txt-puesto'];
 $empresa=$_POST['txt-empresa'];
 $iniciosem=$_POST['txt-iniciosem'];
 $finsem=$_POST['txt-finsem'];
-require_once("../model/Estudiantes.php");
-$estudiantes=new Estudiantes;
+
 try {
 	$query=$estudiantes->create_alumno($id,$apellidos,$nombres,$cfp,$carrera,$semestre,$bloque,$ciclo,$diaclase,$telefono,$celular,$email,$domicilio,$horario,$puesto,$empresa,$iniciosem,$finsem);
-	if($query){
-        echo "INSERCION EXITOSA";
-    }
+    echo "BIEN";
 } catch (Exception $e) {
 	echo "ERROR ECONTRADO: ".$e->getMessage();
 }

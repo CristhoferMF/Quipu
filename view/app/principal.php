@@ -42,7 +42,7 @@ require_once '../../controller/estudiantes_controller.php';
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Acciones <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <li class="dropdown-header">Alumno</li>
-                  <li><a href="add_alumno.php">Agregar Alumno</a></li>
+                  <li><a href="add-alumno">Agregar Alumno</a></li>
                   <li role="separator" class="divider"></li>
                   <li class="dropdown-header">Especialista</li>
                   <li><a href="#">Agregar Especialista</a></li>

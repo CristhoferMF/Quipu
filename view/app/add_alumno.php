@@ -16,9 +16,9 @@
             url:url,
             data:$('#id-form').serialize(),
             success:function(data){
+                alert(data);
                 $('#id-form')[0].reset();
                 $('#semestre-id').val("2018-01");
-                alert(data);
             }   
         });
     });
@@ -118,7 +118,7 @@
             </tr>
             <tr>
                 <td class="" style="font-weight:bold;">INICIO DE SEMINARIO</td>
-                <td><input type="text" placeholder="(YYY-mm-dd)"></input></td>
+                <td><input type="text" placeholder="(YYY-mm-dd)" name="txt-iniciosem"></input></td>
             </tr>
             <tr>
                 <td class="" style="font-weight:bold;">FIN DE SEMINARIO</td>

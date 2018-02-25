@@ -39,12 +39,13 @@ INNER join empresa on empresa.ruc=sede.ruc_empresa_sede
 where  historico.id_estudiante_historico='$id_es' AND historico.semestre='2018-01' and historico.n_historia=(select max(n_historia) from historico WHERE id_estudiante_historico='$id_es')";
         $query=$this->mysqli->query($query_tab);
         $result=$query->fetch_row();
+        //echo $query_tab;
         return $result;
     }
     public function get_empresa_all($nombre){
         $query_tab="SELECT ruc,razon_social from empresa WHERE NOT razon_social='SIN EMPRESA' and razon_social like '%$nombre%'";
         $query=$this->mysqli->query($query_tab);
-        $texto="<select class='combo' id='combo_empresa'>";
+        $texto="<select class='combo' form='form-id' id='combo_empresa' name='cbo-empresa'>";
         while($result=$query->fetch_row()){
             $texto.="<option value='$result[0]'>$result[1]</option>";
         }
@@ -61,7 +62,7 @@ where  historico.id_estudiante_historico='$id_es' AND historico.semestre='2018-0
         $query_tab="SELECT id_sede FROM empresa INNER join sede
 on empresa.ruc=sede.ruc_empresa_sede where empresa.ruc like '$ruc%'";
         $query=$this->mysqli->query($query_tab);
-        $texto="<select class='combo' id='combo_sede'>";
+        $texto="<select class='combo' id='combo_sede' name='cbo-sede' form='form-id'>";
         while($result=$query->fetch_row()){
             $texto.="<option value='$result[0]'>$result[0]</option>";
         }
@@ -77,7 +78,7 @@ on empresa.ruc=sede.ruc_empresa_sede where empresa.ruc like '$ruc%'";
     public function get_monitor_all($ruc_sede){
         $query_tab="SELECT dni_monitor,apellidos,nombres from monitor where id_sede_monitor='$ruc_sede'";
         $query=$this->mysqli->query($query_tab);
-        $texto="<select class='combo'>";
+        $texto="<select class='combo' form='form-id' name='cbo-monitor'>";
         while($result=$query->fetch_row()){
             $texto.="<option value='$result[0]'>$result[1]"." "."$result[2]</option>";
         }
@@ -90,9 +91,19 @@ on empresa.ruc=sede.ruc_empresa_sede where empresa.ruc like '$ruc%'";
         }
     }
    
-    public function set_empresa_nueva($id_historia,$fecha_fin){
-        $query_tab="update historico set estado='PASADO',fecha_fin='$fecha_fin' where id_estudiante_historico='$result[5]'";
-        return $query=$this->mysqli->query($query_tab);
+    public function set_empresa_nueva($id_historia,$n_historia,$fecha_fin,$id_sede,$id_estu,$dni_monitor,$cfp,$carrera,$bloque,$ciclo,$tipo_contrato,$fecha_inicio,$semestre){
+        try {
+            $query_tab="INSERT INTO historico values(NULL,$n_historia,'$id_sede',$id_estu,'$dni_monitor','$cfp','$carrera','$bloque','$ciclo','$tipo_contrato','$fecha_inicio',NULL,'$semestre','ACTIVO')";
+            $query=$this->mysqli->query($query_tab);
+        if($query){
+            $query_tab2="update historico set estado='PASADO',fecha_fin='$fecha_fin' where id_historia=$id_historia";
+            $query2=$this->mysqli->query($query_tab2);
+            return "OK";
+        }
+        } catch (Exception $e) {
+            return "ERROR ".$e->getMessage();
+            
+        }
     }
     public function get_historial($id_es){
         $query_tab="SELECT empresa.razon_social,empresa.ruc,sede.id_sede,monitor.dni_monitor, monitor.apellidos,monitor.nombres,historico.cfp,historico.semestre,historico.carrera, historico.bloque,historico.ciclo,historico.tipo_contrato,historico.fecha_inicio, historico.fecha_fin,historico.estado,historico.n_historia FROM `historico` INNER join sede on sede.id_sede=historico.id_sede_historico INNER join empresa on empresa.ruc=sede.ruc_empresa_sede inner join estudiante on estudiante.id=historico.id_estudiante_historico INNER join monitor on monitor.dni_monitor=historico.dni_monitor_historico WHERE id_estudiante_historico='$id_es' ORDER BY historico.n_historia DESC";

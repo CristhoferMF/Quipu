@@ -30,6 +30,8 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
             success:function(data){
                 if(data="OK"){
                     location.assign('../../app/'+id);
+                }else{
+                    alert(data);
                 }
                 //$("#id-respuesta").html(data);
             }   

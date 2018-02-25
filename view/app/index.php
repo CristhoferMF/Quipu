@@ -19,7 +19,15 @@ if(isset($_GET['alumno'])){
     	}
         
     }else{
-        include 'alumno.php';
+        switch ($views[0]) {
+            case 'add-alumno':
+                include 'add_alumno.php';
+                break;
+            default:
+                include 'alumno.php';
+                break;
+        }
+        //include 'alumno.php';
     }
 }else{
 	include 'principal.php';
