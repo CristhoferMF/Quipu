@@ -53,7 +53,7 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
         </div><!--/.container-fluid -->
       </nav>
       <div class="panel panel-primary">
-       <div class="panel-heading">INFORMACION DE ALUMNO</div>
+       <div class="panel-heading" style="background:#2b58cf;">INFORMACION DE ALUMNO</div>
   <div class="panel-body text-center" style="overflow-y:auto;">
         <h1>ID: <?php echo $result[14]?></h1>
         <table class="table table_bordered table-hover" style="max-width:850px;margin:auto;">
@@ -123,7 +123,7 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
    </div>
   </div>
    <div class="panel panel-primary">
-       <div class="panel-heading">INFORMACION DE EMPRESA</div>
+       <div class="panel-heading" style="background:#2b58cf;">INFORMACION DE EMPRESA</div>
   <div class="panel-body text-center" style="overflow-y:auto;">
      <?php 
     if($result[44]=='00000'){
@@ -205,7 +205,7 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
     if($result[51]!='00000-0'){
     ?>
        <div class="panel panel-primary">
-       <div class="panel-heading">INFORMACION DE MONITOR</div>
+       <div class="panel-heading" style="background:#2b58cf;">INFORMACION DE MONITOR</div>
   <div class="panel-body text-center" style="overflow-y:auto;"> 
       <table class="table table_bordered table-hover" style="max-width:850px;margin:auto;">
         <tbody>

@@ -2,7 +2,7 @@
 require_once '../../controller/historial_estudiantes.php';
 //echo $_GET['alumno'];
 if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
-    header("location:index.php");
+    header("location:../index.php");
 }else{
     //echo "bien";
     $result=mysqli_fetch_array($info_estudiante);
@@ -21,7 +21,7 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
 	<meta charset="utf-8">
 </head>
 <body>
-  <div class="container" style="margin-top:40px;max-width:850px;border-left:1px solid #d3d3d3;border-right:1px solid #d3d3d3;">
+  <div class="center-block col-lg-11" style="overflow-x:auto;float:none;margin-top:40px;">
      <!-- Static navbar -->
       <nav class="navbar navbar-default" onk>
         <div class="container-fluid">
@@ -42,25 +42,25 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
         </div><!--/.container-fluid -->
       </nav>
       <div class="panel panel-primary">
-       <div class="panel-heading">HISTORIAL DE PRACTICAS</div>
+       <div class="panel-heading" style="background:#2b58cf;">HISTORIAL DE PRACTICAS</div>
   <div class="panel-body text-center" style="overflow-x:auto;">
         <table class="table table_bordered table-hover" style="max-width:850px;margin:auto;">
         <thead>
             <tr>
-                <tH>RAZON SOCIAL</tH>
-                <tH>RUC EMPRESA</tH>
-                <tH>SEDE EMPRESA</tH>
-                <tH>DNI MONITOR</tH>
-                <tH nowrap>APELLIDOS Y NOMBRES MONITOR</tH>
-                <tH>CFP</tH>
-                <tH>SEMESTRE</tH>
-                <tH>CARRERA</tH>
-                <tH>BLOQUE</tH>
-                <tH>CICLO</tH>
-                <tH>TIPO DE CONTRATO</tH>
-                <tH>FECHA INICIO</tH>
-                <tH>FECHA FIN</tH>
-                <tH>ESTADO</tH>
+                <tH nowrap>RAZON SOCIAL</tH>
+                <tH nowrap>RUC EMPRESA</tH>
+                <tH nowrap>SEDE EMPRESA</tH>
+                <tH nowrap>DNI MONITOR</tH>
+                <tH nowrap >APELLIDOS Y NOMBRES MONITOR</tH>
+                <tH nowrap>CFP</tH>
+                <tH nowrap>SEMESTRE</tH>
+                <tH nowrap>CARRERA</tH>
+                <tH nowrap>BLOQUE</tH>
+                <tH nowrap>CICLO</tH>
+                <tH nowrap>TIPO DE CONTRATO</tH>
+                <tH nowrap>FECHA INICIO</tH>
+                <tH nowrap>FECHA FIN</tH>
+                <tH nowrap>ESTADO</tH>
             </tr>
         </thead>
         <tbody>

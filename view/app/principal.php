@@ -6,13 +6,14 @@ require_once '../../controller/estudiantes_controller.php';
 <head>
 	<title>Seguimiento | Login</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../assets/css/udpate.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<meta charset="utf-8">
 </head>
 <body>
-   <div class="container" style="margin-top:40px;">
+   <div class="center-block col-lg-11" style="float:none;margin-top:40px;">
         <!-- Static navbar -->
       <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -47,39 +48,42 @@ require_once '../../controller/estudiantes_controller.php';
                   <li><a href="#">Agregar Especialista</a></li>
                 </ul>
               </li>
+              
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
    </div>
-    <div class="container" style="overflow-x:scroll;">
+   <div class="center-block col-lg-11" style="float:none;">
+   <h2 style="color:#2b58cf;padding-bottom: 12px;">Listado de Alumnos</h2></div>
+    <div class="center-block col-lg-11" style="overflow-x:scroll;float:none;">
         <table class="table table_bordered table-hover">
 		<thead>
 			<tr>
-				<th nowrap>SEMESTRE</th>
-				<th nowrap>CICLO</th>
-				<th nowrap>CFP</th>
-				<th nowrap>CARRERA</th>
-				<th nowrap>ID ALUMNO</th>
-				<th nowrap>DIA DE CLASE</th>
-				<th nowrap>BLOQUE</th>
-				<th nowrap>APELLIDOS Y NOMBRES ALUMNO</th>
-				<th nowrap>CELULAR ALUMNO</th>
-				<th nowrap>EMAIL ALUMNO</th>
-				<th nowrap>RUC EMPRESA</th>
-				<th nowrap>RAZON SOCIAL</th>
-				<th nowrap>SEDE</th>
-				<th nowrap>DEPARTAMENTO</th>
-				<th nowrap>PROVINCIA</th>
-				<th nowrap>DISTRITO</th>
-				<th nowrap>DIRECCION SEDE</th>
-				<th nowrap>TELEFONO SEDE</th>
-				<th nowrap>EMAIL SEDE</th>
-				<th nowrap>DNI MONITOR</th>
-				<th nowrap>APELLIDOS Y NOMBRES MONITOR</th>
-				<th nowrap>TELEFONO MONITOR</th>
-				<th nowrap>ID ESPECIALISTA</th>
-				<th nowrap>APELLIDOS Y NOMBRES ESPECIALISTA</th>
+				<th nowrap style="background:#2b58cf;color: white;padding: 12px;">SEMESTRE</th>
+				<th nowrap style="background:#2b58cf;color: white;padding: 12px;">CICLO</th>
+				<th nowrap style="background:#2b58cf;color: white;padding: 12px;">CFP</th>
+				<th nowrap style="background:#2b58cf;color: white;padding: 12px;">CARRERA</th>
+				<th nowrap style="background:#2b58cf;color: white;padding: 12px;">ID ALUMNO</th>
+				<th nowrap style="background:#2b58cf;color: white;padding: 12px;">DIA DE CLASE</th>
+				<th nowrap style="background:#2b58cf;color: white;padding: 12px;">BLOQUE</th>
+				<th nowrap style="background:#2b58cf;color: white;padding: 12px;">APELLIDOS Y NOMBRES ALUMNO</th>
+				<th nowrap style="background:#2b58cf;color: white;padding: 12px;">CELULAR ALUMNO</th>
+				<th nowrap style="background:#2b58cf;color: white;padding: 12px;">EMAIL ALUMNO</th>
+				<th nowrap style="background:#2b58cf;color: white;padding: 12px;">RUC EMPRESA</th>
+				<th nowrap style="background:#2b58cf;color: white;padding: 12px;">RAZON SOCIAL</th>
+				<th nowrap style="background:#2b58cf;color: white;padding: 12px;">SEDE</th>
+				<th nowrap style="background:#2b58cf;color: white;padding: 12px;">DEPARTAMENTO</th>
+				<th nowrap style="background:#2b58cf;color: white;padding: 12px;">PROVINCIA</th>
+				<th nowrap style="background:#2b58cf;color: white;padding: 12px;">DISTRITO</th>
+				<th nowrap style="background:#2b58cf;color: white;padding: 12px;">DIRECCION SEDE</th>
+				<th nowrap style="background:#2b58cf;color: white;padding: 12px;">TELEFONO SEDE</th>
+				<th nowrap style="background:#2b58cf;color: white;padding: 12px;">EMAIL SEDE</th>
+				<th nowrap style="background:#2b58cf;color: white;padding: 12px;">DNI MONITOR</th>
+				<th nowrap style="background:#2b58cf;color: white;padding: 12px;">APELLIDOS Y NOMBRES MONITOR</th>
+				<th nowrap style="background:#2b58cf;color: white;padding: 12px;">TELEFONO MONITOR</th>
+				<th nowrap style="background:#2b58cf;color: white;padding: 12px;">ID ESPECIALISTA</th>
+				<th nowrap style="background:#2b58cf;color: white;padding: 12px;">APELLIDOS Y NOMBRES ESPECIALISTA</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -89,7 +93,7 @@ require_once '../../controller/estudiantes_controller.php';
                 <td>$result[1]</td>
                 <td>$result[2]</td>
                 <td>$result[3]</td>
-                <td><a href='$result[4]'>$result[4]</a></td>
+                <td><a href='$result[4]' title='$result[7] $result[8]'>$result[4]</a></td>
                 <td>$result[5]</td>
                 <td>$result[6]</td>
                 <td>$result[7] $result[8]</td>
@@ -104,10 +108,11 @@ require_once '../../controller/estudiantes_controller.php';
                 <td>$result[17]</td>
                 <td>$result[18]</td>
                 <td>$result[19]</td>
-                <td>$result[20] $result[21]</td>
-                <td>$result[22]</td>
+                <td>$result[20]</td>
+                <td>$result[21] $result[22]</td>
                 <td>$result[23]</td>
-                <td>$result[24] $result[25]</td>
+                <td>$result[24]</td>
+                <td>$result[25] $result[26]</td>
                 </tr>";
             }?>
 		</tbody>

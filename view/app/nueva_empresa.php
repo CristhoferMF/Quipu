@@ -40,7 +40,7 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
             
         });
         
-    $(document).on("click","#combo_empresa",function(){
+    $(document).on("click","#id-btn-empresa",function(){
             var ruc=$("#combo_empresa").val();
             $.ajax({
                 data:{ruc:ruc},
@@ -51,7 +51,7 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
                 }
         });
         });
-        $(document).on("click","#combo_sede",function(){
+        $(document).on("click","#id-btn-sede",function(){
             var id_sede=$("#combo_sede").val();
             $.ajax({
                 data:{id_sede:id_sede},
@@ -86,7 +86,7 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
         </div><!--/.container-fluid -->
       </nav>
       <div class="panel panel-primary">
-       <div class="panel-heading">DATOS DE EMPRESA ANTIGUA</div>
+       <div class="panel-heading" style="background:#2b58cf;">DATOS DE EMPRESA ANTIGUA</div>
   <div class="panel-body text-center" style="overflow-y:auto;">
         <h1>ID: <?php echo $result[14]?></h1>
         <table class="table table_bordered table-hover" style="max-width:850px;margin:auto;">
@@ -116,7 +116,7 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
    </div>
   </div>
      <div class="panel panel-primary">
-       <div class="panel-heading">DATOS DE EMPRESA ANTIGUA</div>
+       <div class="panel-heading" style="background:#2b58cf;">DATOS DE EMPRESA ANTIGUA</div>
   <div class="panel-body text-center" style="overflow-y:auto;">
         <table class="table table_bordered table-hover" style="max-width:850px;margin:auto;">
         <tbody>

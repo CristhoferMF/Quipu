@@ -48,8 +48,14 @@ where  historico.id_estudiante_historico='$id_es' AND historico.semestre='2018-0
         while($result=$query->fetch_row()){
             $texto.="<option value='$result[0]'>$result[1]</option>";
         }
-        $texto.="</select>";
-        return $texto;
+        $texto.="</select><button class='btn btn-primary' id='id-btn-empresa'>Buscar Sede</button>";
+        $num=$query->num_rows;
+        if($num==0){
+            return "";
+        }else{
+            return $texto;
+        }
+        
     }
      public function get_sede_all($ruc){
         $query_tab="SELECT id_sede FROM empresa INNER join sede
@@ -59,8 +65,13 @@ on empresa.ruc=sede.ruc_empresa_sede where empresa.ruc like '$ruc%'";
         while($result=$query->fetch_row()){
             $texto.="<option value='$result[0]'>$result[0]</option>";
         }
-        $texto.="</select>";
-        return $texto;
+        $texto.="</select><button class='btn btn-primary' id='id-btn-sede'>Buscar Monitor</button>";
+        $num=$query->num_rows;
+        if($num==0){
+            return "No hay Sedes";
+        }else{
+            return $texto;
+        }
     }
     
     public function get_monitor_all($ruc_sede){
@@ -71,7 +82,12 @@ on empresa.ruc=sede.ruc_empresa_sede where empresa.ruc like '$ruc%'";
             $texto.="<option value='$result[0]'>$result[1]"." "."$result[2]</option>";
         }
         $texto.="</select>";
-        return $texto;
+        $num=$query->num_rows;
+        if($num==0){
+            return "<h4>No existe monitor</h4>";
+        }else{
+            return $texto;
+        }
     }
    
     public function set_empresa_nueva($id_historia,$fecha_fin){
@@ -79,8 +95,7 @@ on empresa.ruc=sede.ruc_empresa_sede where empresa.ruc like '$ruc%'";
         return $query=$this->mysqli->query($query_tab);
     }
     public function get_historial($id_es){
-        $query_tab="SELECT empresa.razon_social,empresa.ruc,sede.id_sede,monitor.dni_monitor, monitor.apellidos,monitor.nombres,historico.cfp,historico.semestre,historico.carrera, historico.bloque,historico.ciclo,historico.tipo_contrato,historico.fecha_inicio, historico.fecha_fin,historico.estado FROM `historico` INNER join sede on sede.id_sede=historico.id_sede_historico INNER join empresa on empresa.ruc=sede.ruc_empresa_sede inner join estudiante on estudiante.id=historico.id_estudiante_historico INNER join monitor on monitor.dni_monitor=historico.dni_monitor_historico
-WHERE id_estudiante_historico='$id_es'";
+        $query_tab="SELECT empresa.razon_social,empresa.ruc,sede.id_sede,monitor.dni_monitor, monitor.apellidos,monitor.nombres,historico.cfp,historico.semestre,historico.carrera, historico.bloque,historico.ciclo,historico.tipo_contrato,historico.fecha_inicio, historico.fecha_fin,historico.estado,historico.n_historia FROM `historico` INNER join sede on sede.id_sede=historico.id_sede_historico INNER join empresa on empresa.ruc=sede.ruc_empresa_sede inner join estudiante on estudiante.id=historico.id_estudiante_historico INNER join monitor on monitor.dni_monitor=historico.dni_monitor_historico WHERE id_estudiante_historico='$id_es' ORDER BY historico.n_historia DESC";
         return $query=$this->mysqli->query($query_tab);
   
     }
@@ -95,6 +110,36 @@ WHERE id_estudiante_historico='$id_es'";
         }
         //echo $query_tab;
         //echo $query_tab2;
+    }
+    public function update_alumno($apellidos,$nombres,$cfp,$semestre,$ciclo,$bloque,$carrera,$dia_clase,$telefono,$celular,$email,$domicilio,$horario,$puesto,$empresa,$inicio,$fin,$estado,$id){
+        $query_tab="update estudiante set 
+        apellidos='$apellidos',
+        nombres='$nombres',
+        cfp='$cfp',
+        semestre='$semestre',
+        ciclo='$ciclo',
+        bloque='$bloque',
+        carrera='$carrera',
+        dia_clase='$dia_clase',
+        telefono='$telefono',
+        celular='$celular',
+        email='$email',
+        domicilio='$domicilio',
+        horario_practicas='$horario',
+        puesto='$puesto',
+        empresa_patrocinio='$empresa',
+        inicio_Seminario='$inicio',
+        fin_seminario='$fin',
+        estado='$estado' where id=$id";
+        //echo $query_tab;
+        try {
+            $query=$this->mysqli->query($query_tab);
+            if($query){
+                echo "OK";
+            }
+        } catch (Exception $e) {
+            return "ERROR: ".$e->getMessage();
+        }
     }
 }
     
