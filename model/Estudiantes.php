@@ -66,7 +66,7 @@ on empresa.ruc=sede.ruc_empresa_sede where empresa.ruc like '$ruc%'";
         while($result=$query->fetch_row()){
             $texto.="<option value='$result[0]'>$result[0]</option>";
         }
-        $texto.="</select><button class='btn btn-primary' id='id-btn-sede'>Buscar Monitor</button>";
+        $texto.="</select><button class='btn btn-primary' id='id-btn-sede' style='background:#2b58cf;'>Buscar Monitor</button>";
         $num=$query->num_rows;
         if($num==0){
             return "No hay Sedes";
@@ -150,6 +150,35 @@ on empresa.ruc=sede.ruc_empresa_sede where empresa.ruc like '$ruc%'";
             }
         } catch (Exception $e) {
             return "ERROR: ".$e->getMessage();
+        }
+    }
+    public function all_empresas()
+    {
+        $query_tab="SELECT * FROM empresa WHERE NOT ruc='00000'";
+        $query=$this->mysqli->query($query_tab);
+        if($query){
+            return $query;
+        }
+    }
+    public function info_empresa($ruc){
+        $query_tab="SELECT * FROM empresa WHERE NOT ruc='00000' AND ruc='$ruc'";
+        $query=$this->mysqli->query($query_tab);
+        if($query){
+            return $query;
+        }
+    }    
+    public function info_sede($ruc){
+        $query_tab="SELECT * FROM sede WHERE NOT ruc_empresa_sede='00000' AND ruc_empresa_sede='$ruc'";
+        $query=$this->mysqli->query($query_tab);
+        if($query){
+            return $query;
+        }
+    }
+    public function info_monitor($sede){
+        $query_tab="SELECT * FROM monitor WHERE NOT id_sede_monitor='00000-0' AND id_sede_monitor='$sede'";
+        $query=$this->mysqli->query($query_tab);
+        if($query){
+            return $query;
         }
     }
 }

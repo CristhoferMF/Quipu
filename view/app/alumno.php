@@ -19,6 +19,23 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
 	<meta charset="utf-8">
 </head>
 <body>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">¿Esta Seguro?</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" style="background:#2b58cf;">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
   <div class="container" style="margin-top:40px;max-width:850px;">
      <!-- Static navbar -->
       <nav class="navbar navbar-default">
@@ -40,7 +57,7 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
                 <ul class="dropdown-menu">
                   <li><a href="<?php echo $result[14]?>/edit">Editar Información</a></li>
                   <li><a href="<?php echo $result[14]?>/historial">Ver Historial</a></li>
-                  <li><a href="#">Dar de baja</a></li>
+                  <li><a href="" data-toggle="modal" data-target="#myModal">Dar de baja</a></li>
                   <li role="separator" class="divider"></li>
                   <li class="dropdown-header">Empresa</li>
                   <li><a href="<?php echo $result[14]?>/nueva_empresa">Cambiar de empresa</a></li>
