@@ -68,19 +68,19 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
             while($result1=mysqli_fetch_array($historial)){
                 echo "<tr>
                 <td>$result1[0]</td>
-                <td>$result1[1]</td>
-                <td>$result1[2]</td>
-                <td>$result1[3]</td>
-                <td>$result1[4]"." "."$result1[5]</td>
-                <td>$result1[6]</td>
-                <td>$result1[7]</td>
-                <td>$result1[8]</td>
-                <td>$result1[9]</td>
-                <td>$result1[10]</td>
-                <td>$result1[11]</td>
-                <td>$result1[12]</td>
-                <td>$result1[13]</td>
-                <td>$result1[14]</td>
+                <td nowrap>$result1[1]</td>
+                <td nowrap>$result1[2]</td>
+                <td nowrap>$result1[3]</td>
+                <td nowrap>$result1[4]"." "."$result1[5]</td>
+                <td nowrap>$result1[6]</td>
+                <td nowrap>$result1[7]</td>
+                <td nowrap>$result1[8]</td>
+                <td nowrap>$result1[9]</td>
+                <td nowrap>$result1[10]</td>
+                <td nowrap>$result1[11]</td>
+                <td nowrap>$result1[12]</td>
+                <td nowrap>$result1[13]</td>
+                <td nowrap>$result1[14]</td>
                 </tr>";
             }
             ?>

@@ -46,7 +46,7 @@
         </div><!--/.container-fluid -->
       </nav>
       <div class="panel panel-primary">
-       <div class="panel-heading" style="background:#2b58cf;">AGREGAR ALUMNO</div>
+       <div class="panel-heading" style="background:#2b58cf;">Agregar alumno</div>
   <div class="panel-body text-center" style="overflow-x:auto;">
         <table class="table table_bordered table-hover" style="max-width:850px;margin:auto;">
         <form action="" method="post" id="id-form">

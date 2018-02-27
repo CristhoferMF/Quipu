@@ -73,7 +73,7 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
        <div class="panel-heading" style="background:#2b58cf;">INFORMACION DE ALUMNO</div>
   <div class="panel-body text-center" style="overflow-y:auto;">
         <h1>ID: <?php echo $result[14]?></h1>
-        <table class="table table_bordered table-hover" style="max-width:850px;margin:auto;">
+        <table class="table table_bordered table-hover" style="max-width:850px;margin:auto;font-size: 12px;">
         <tbody>
             <tr>
                 <td class="" style="font-weight:bold;">APELLIDOS Y NOMBRES</td>
@@ -147,7 +147,7 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
        echo "<h3>Sin Empresa</h3>";
     }else{
     ?>
-      <table class="table table_bordered table-hover" style="max-width:850px;margin:auto;">
+      <table class="table table_bordered table-hover" style="max-width:850px;margin:auto;font-size: 12px;">
         <tbody>
             <tr>
                 <td class="" style="font-weight:bold;">RUC EMPRESA</td>
@@ -224,7 +224,7 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
        <div class="panel panel-primary">
        <div class="panel-heading" style="background:#2b58cf;">INFORMACION DE MONITOR</div>
   <div class="panel-body text-center" style="overflow-y:auto;"> 
-      <table class="table table_bordered table-hover" style="max-width:850px;margin:auto;">
+      <table class="table table_bordered table-hover" style="max-width:850px;margin:auto;font-size: 12px;">
         <tbody>
             <tr>
                 <td class="" style="font-weight:bold;">DNI MONITOR</td>

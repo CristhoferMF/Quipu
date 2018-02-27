@@ -13,10 +13,10 @@ require_once '../../controller/empresa_controller.php';
   <meta charset="utf-8">
 </head>
 <body>
-   <div class="center-block col-lg-11" style="float:none;margin-top:40px;">
+
         <!-- Static navbar -->
       <nav class="navbar navbar-default">
-        <div class="container-fluid">
+        <div class="container-fluid col-lg-11 center-block" style="float: none;">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
               <span class="sr-only">Toggle navigation</span>
@@ -31,9 +31,15 @@ require_once '../../controller/empresa_controller.php';
              <!-- Buscador ID -->
              <form class="navbar-form navbar-left" role="search">
       <div class="form-group">
-        <input type="text" class="form-control" placeholder="Buscar Ruc de empresa">
+        <select class="form-control">
+          <option selected="true">Criterio</option>
+          <option value="">Semestre</option>
+          <option value="">Carrera</option>
+          <option value="">Bloque</option>
+        </select>
+        <input type="text" class="form-control" placeholder="...">
       </div>
-      <button type="submit" class="btn btn-default">Enviar</button>
+      <button type="submit" class="btn btn-default">Buscar</button>
     </form>
              
              <!-- Fin buscador-->
@@ -50,7 +56,6 @@ require_once '../../controller/empresa_controller.php';
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
-   </div>
    <div class="center-block col-lg-11" style="float:none;">
    <h2 style="color:#2b58cf;padding-bottom: 12px;">Listado de Empresas</h2></div>
     <div class="center-block col-lg-11" style="overflow-x:scroll;float:none;">
@@ -68,14 +73,14 @@ require_once '../../controller/empresa_controller.php';
     </thead>
     <tbody>
         <?php while($result=mysqli_fetch_array($all_empresas)){
-                echo "<tr>
-                <td><a href='empresa/-$result[0]' title='$result[1]'>$result[0]</a></td>
-                <td>$result[1]</td>
-                <td>$result[2]</td>
-                <td>$result[3]</td>
-                <td>$result[4]</td>
-                <td>$result[5]</td>
-                <td>$result[6]</td>
+                echo "<tr style='font-size:12px;'>
+                <td nowrap><a href='empresa/-$result[0]' title='$result[1]'>$result[0]</a></td>
+                <td nowrap>$result[1]</td>
+                <td nowrap>$result[2]</td>
+                <td nowrap>$result[3]</td>
+                <td nowrap>$result[4]</td>
+                <td nowrap>$result[5]</td>
+                <td nowrap>$result[6]</td>
                 </tr>";
             }?>
     </tbody>
