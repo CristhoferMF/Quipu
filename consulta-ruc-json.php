@@ -3,9 +3,8 @@
 $ruta = "https://ruc.com.pe/api/v1/ruc";
 $token = "61541e9e-7706-4252-a288-bf02bbe120f2-abf0dc4a-d00e-41f0-85f9-5b67fb763418";
 
-$rucaconsultar = $_POST['txt_ruc'];
-$rucaconsultar=trim($rucaconsultar);
-if($rucaconsultar){
+$rucaconsultar = '10178520739';
+
 $data = array(
     "token"	=> $token,
     "ruc"   => $rucaconsultar
@@ -29,21 +28,12 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $respuesta  = curl_exec($ch);
 curl_close($ch);
 
-$leer = json_decode($respuesta, true);
-if (isset($leer['errors'])) {
+$leer_respuesta = json_decode($respuesta, true);
+if (isset($leer_respuesta['errors'])) {
 	//Mostramos los errores si los hay
-    echo $leer['errors'];
+    echo $leer_respuesta['errors'];
 } else {
 	//Mostramos la respuesta
-	
-	if(!@$leer['ruc']){
-		echo "No se encuentra el RUC##Error##Error##Error##Error##Error##Error";
-	}else{
-		echo $leer['ruc']."##".$leer['nombre_o_razon_social'].
-		"##".$leer['estado_del_contribuyente']."##".$leer['direccion_completa']."##".
-		$leer['departamento']."##".$leer['provincia']."##".$leer['distrito'];
-	}
-}
-}else{
-	echo "Ingrese Ruc";
+	echo "Respuesta de la API:<br>";
+	print_r($leer_respuesta);
 }

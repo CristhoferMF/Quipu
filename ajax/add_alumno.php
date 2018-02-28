@@ -19,12 +19,16 @@ $puesto=$_POST['txt-puesto'];
 $empresa=$_POST['txt-empresa'];
 $iniciosem=$_POST['txt-iniciosem'];
 $finsem=$_POST['txt-finsem'];
-
-try {
+if($id){
+	try {
 	$query=$estudiantes->create_alumno($id,$apellidos,$nombres,$cfp,$carrera,$semestre,$bloque,$ciclo,$diaclase,$telefono,$celular,$email,$domicilio,$horario,$puesto,$empresa,$iniciosem,$finsem);
     echo "BIEN";
 } catch (Exception $e) {
 	echo "ERROR ECONTRADO: ".$e->getMessage();
 }
+}else{
+	echo "Error: Return to home";
+}
+
 //echo $nombre;
 ?>

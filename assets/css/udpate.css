@@ -6,6 +6,10 @@
 tr{
     font-size: 12px;
 }
+.readonly{
+    background-color: rgba(1, 148, 203, 0.22);
+    cursor: pointer;
+}
 .bg-azul{
     background-color: #2b58cf;
     color: white;
