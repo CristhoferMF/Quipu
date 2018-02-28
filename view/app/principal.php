@@ -42,8 +42,9 @@ require_once '../../controller/estudiantes_controller.php';
     </form>
              
              <!-- Fin buscador-->
-              <li class=""><a href="empresa">Ir a Empresas</a></li>
-              <li class=""><a href="especialista">Ir a Especialistas</a></li>
+              <li class="active"><a href="">Alumnos</a></li>
+              <li class=""><a href="empresa">Empresas</a></li>
+              <li class=""><a href="especialista">Especialistas</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Acciones <span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -51,15 +52,22 @@ require_once '../../controller/estudiantes_controller.php';
                   <li><a href="add-alumno">Agregar Alumno</a></li>
                 </ul>
               </li>
-              
             </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="false"></span> Hola admin<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="">Cerrar Sesión</a></li>
+                </ul>
+              </li>
+          </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
    <div class="center-block col-lg-11" style="float:none;">
-   <h2 style="color:#2b58cf;padding-bottom: 12px;">Listado de Alumnos</h2></div>
+   <h2 style="color:#2b58cf;padding-bottom: 12px;">Listado de alumnos</h2></div>
     <div class="center-block col-lg-11" style="overflow-x:scroll;float:none;">
-        <table class="table table_bordered table-hover">
+        <table class="table table_bordered tabla-hover">
 		<thead>
 			<tr>
 				<th nowrap style="background:#2b58cf;color: white;padding: 12px;">Semetre</th>

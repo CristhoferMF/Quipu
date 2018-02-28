@@ -99,10 +99,9 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
     </script>
 </head>
 <body>
-  <div class="container" style="margin-top:40px;max-width:850px;border-left:1px solid #d3d3d3;border-right:1px solid #d3d3d3;">
      <!-- Static navbar -->
       <nav class="navbar navbar-default" onk>
-        <div class="container-fluid">
+        <div class="container-fluid center-block" style="float: none;max-width:850px;">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
               <span class="sr-only">Toggle navigation</span>
@@ -119,8 +118,9 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
+        <div class="container" style="margin-top:40px;max-width:850px;">
       <div class="panel panel-primary">
-       <div class="panel-heading" style="background:#2b58cf;">DATOS DE EMPRESA ANTIGUA</div>
+       <div class="panel-heading" style="background:#2b58cf;">Datos de empresa actual</div>
   <div class="panel-body text-center" style="overflow-y:auto;">
         <h1>ID: <?php echo $result[14]?></h1>
         <input type="text" hidden id="id-alumno" name="txt-id" value="<?php echo $result[14];?>"></input>
@@ -128,21 +128,21 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
         <tbody>
            <?php if($empresa_antigua[2]!="SIN EMPRESA"){?>
             <tr>
-                <td class="" style="font-weight:bold;">RAZON SOCIAL</td>
+                <td class="" style="font-weight:bold;font-size: 14px;">Razon social</td>
                 <td><?php echo $empresa_antigua[2]?></td>
             </tr>
             <tr>
-                <td class="" style="font-weight:bold;">RUC</td>
+                <td class="" style="font-weight:bold;font-size: 14px;">RUC</td>
                 <td><?php echo $empresa_antigua[3]?></td>
             </tr>
             <tr>
-                <td class="" style="font-weight:bold;">SEDE EMPRESA</td>
+                <td class="" style="font-weight:bold;font-size: 14px;">Sede empresa</td>
                 <td><?php echo $empresa_antigua[4]?></td>
             </tr>
             <?php }else{
     ?>
     <tr>
-                <td class="" style="font-weight:bold;" colspan="2">SIN EMPRESA</td>
+                <td class="" style="font-weight:bold;font-size: 14px;" colspan="2">SIN EMPRESA</td>
             </tr>
     <?php
 }?>
@@ -151,7 +151,7 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
    </div>
   </div>
      <div class="panel panel-primary">
-       <div class="panel-heading" style="background:#2b58cf;">DATOS DE EMPRESA ANTIGUA</div>
+       <div class="panel-heading" style="background:#2b58cf;">Datos de empresa nueva</div>
        <div id="respuesta"></div>
   <div class="panel-body text-center" style="overflow-y:auto;">
         <table class="table table_bordered table-hover" style="max-width:850px;margin:auto;">
@@ -166,35 +166,35 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
             <input type="text" hidden name="txt-id-historia" value="<?php echo $empresa_antigua[5] ?>">
             <input type="text" hidden name="txt-n-historia" value="<?php echo $empresa_antigua[0]?>">
             <tr>
-                <td class="" style="font-weight:bold;">FECHA INICIO</td>
+                <td class="" style="font-weight:bold;font-size: 14px;">Fecha inicio</td>
                 <td><input type="date" name="txt-fecha-inicio"></td>
             </tr>
             <tr>
-                <td class="" style="font-weight:bold;">FECHA FIN</td>
+                <td class="" style="font-weight:bold;font-size: 14px;">Fecha fin</td>
                 <td><input type="date" name="txt-fecha-fin"></td>
             </tr>
             <tr>
-                <td class="" style="font-weight:bold;">TIPO DE CONTRATO</td>
-                <td><input type="text" name="txt-tipo-contrato"></td>
+                <td class="" style="font-weight:bold;font-size: 14px;">Tipo de contrato</td>
+                <td><input type="text" name="txt-tipo-contrato" placeholder="Tipo de contrato"></td>
             </tr>
             <tr>
-                <td class="" ><i>BUSCAR EMPRESA</i></td>
-                <td><input type="text" id="txt_empresa"></td>
+                <td class="" ><i>Bucar empresa</i></td>
+                <td><input type="text" id="txt_empresa" placeholder="Busca empresas"></td>
             </tr>
             <tr>
-                <td class="" style="font-weight:bold;">EMPRESA</td>
+                <td class="" style="font-weight:bold;font-size: 14px;">Empresa</td>
                 <td id="respuesta_empresa"></td>
             </tr>
             <tr>
-                <td class="" style="font-weight:bold;">SEDE EMPRESA</td>
+                <td class="" style="font-weight:bold;font-size: 14px;">Sede empresa</td>
                 <td id="respuesta_sede"></td>
             </tr>
             <tr>
-                <td class="" style="font-weight:bold;">MONITOR SEDE</td>
+                <td class="" style="font-weight:bold;font-size: 14px;">Monitor estudiante</td>
                 <td id="respuesta_monitor"></td>
             </tr>
             <tr>
-                <td colspan="2"><input type="submit" disabled value="Cambiar Empresa" class="btn btn-primary" id="btn-id-enviar"></td>
+                <td colspan="2"><input type="submit" disabled value="Cambiar Empresa" class="btn btn-primary" style="background:#2b58cf;" id="btn-id-enviar"></td>
             </tr>
            </form> 
         </tbody>

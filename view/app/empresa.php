@@ -43,7 +43,9 @@ require_once '../../controller/empresa_controller.php';
     </form>
              
              <!-- Fin buscador-->
-              <li class=""><a href="../app">Ir a Alumnos</a></li>
+              <li class=""><a href="alumnos">Alumnos</a></li>
+              <li class="active"><a href="">Empresas</a></li>
+              <li class=""><a href="especialista">Especialistas</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Acciones <span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -57,18 +59,18 @@ require_once '../../controller/empresa_controller.php';
         </div><!--/.container-fluid -->
       </nav>
    <div class="center-block col-lg-11" style="float:none;">
-   <h2 style="color:#2b58cf;padding-bottom: 12px;">Listado de Empresas</h2></div>
+   <h2 style="color:#2b58cf;padding-bottom: 12px;">Listado de empresas</h2></div>
     <div class="center-block col-lg-11" style="overflow-x:scroll;float:none;">
         <table class="table table_bordered table-hover">
     <thead>
       <tr>
-        <th nowrap style="background:#2b58cf;color: white;padding: 12px;">RUC</th>
-        <th nowrap style="background:#2b58cf;color: white;padding: 12px;">RAZON SOCIAL</th>
-        <th nowrap style="background:#2b58cf;color: white;padding: 12px;">REPRESENTANTE LEGAL</th>
-        <th nowrap style="background:#2b58cf;color: white;padding: 12px;">DNI REPRESENTANTE</th>
-        <th nowrap style="background:#2b58cf;color: white;padding: 12px;">CANT TRABAJADORES</th>
-        <th nowrap style="background:#2b58cf;color: white;padding: 12px;">ACTIVIDAD PRINCIPAL</th>
-        <th nowrap style="background:#2b58cf;color: white;padding: 12px;">ESTADO</th>
+        <th nowrap style="background:#2b58cf;color: white;padding: 12px;">Ruc</th>
+        <th nowrap style="background:#2b58cf;color: white;padding: 12px;">Razon social</th>
+        <th nowrap style="background:#2b58cf;color: white;padding: 12px;">Representante legal</th>
+        <th nowrap style="background:#2b58cf;color: white;padding: 12px;">Dni representante</th>
+        <th nowrap style="background:#2b58cf;color: white;padding: 12px;">Cant. trabajadores</th>
+        <th nowrap style="background:#2b58cf;color: white;padding: 12px;">Actividad principal</th>
+        <th nowrap style="background:#2b58cf;color: white;padding: 12px;">Estado</th>
       </tr>
     </thead>
     <tbody>

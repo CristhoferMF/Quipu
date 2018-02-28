@@ -12,7 +12,7 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Seguimiento | Alumno <?php echo $result[14]?></title>
+	<title>Seguimiento | Historial | <?php echo $result[14]?></title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../../../assets/css/udpate.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -21,10 +21,9 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
 	<meta charset="utf-8">
 </head>
 <body>
-  <div class="center-block col-lg-11" style="overflow-x:auto;float:none;margin-top:40px;">
      <!-- Static navbar -->
       <nav class="navbar navbar-default" onk>
-        <div class="container-fluid">
+        <div class="container-fluid center-block" style="float: none;max-width: 850px;">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
               <span class="sr-only">Toggle navigation</span>
@@ -41,10 +40,11 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
+      <div class="center-block col-lg-10" style="overflow-x:auto;float:none;margin-top:40px;">
       <div class="panel panel-primary">
-       <div class="panel-heading" style="background:#2b58cf;">HISTORIAL DE PRACTICAS</div>
+       <div class="panel-heading" style="background:#2b58cf;">Historial de practicas</div>
   <div class="panel-body text-center" style="overflow-x:auto;">
-        <table class="table table_bordered table-hover" style="max-width:850px;margin:auto;">
+        <table class="table table_bordered table-hover" style="margin:auto;">
         <thead>
             <tr>
                 <tH nowrap>RAZON SOCIAL</tH>

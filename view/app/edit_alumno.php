@@ -40,10 +40,9 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
     </script>
 </head>
 <body>
-  <div class="container" style="margin-top:40px;max-width:850px;border-left:1px solid #d3d3d3;border-right:1px solid #d3d3d3;">
      <!-- Static navbar -->
       <nav class="navbar navbar-default">
-        <div class="container-fluid">
+        <div class="container-fluid center-block" style="float: none;max-width:850px;">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
               <span class="sr-only">Toggle navigation</span>
@@ -60,9 +59,10 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
+      <div class="container" style="margin-top:40px;max-width:850px;">
       <div class="panel panel-primary">
       <div id="id-respuesta"></div>
-       <div class="panel-heading" style="background:#2b58cf;">EDITAR DE ALUMNO</div>
+       <div class="panel-heading" style="background:#2b58cf;">Editar alumno</div>
   <div class="panel-body text-center" style="overflow-x:auto;">
         <h1>ID: <?php echo $result[14]?></h1>
         <table class="table table_bordered table-hover" style="max-width:850px;margin:auto;">
@@ -143,7 +143,7 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
             </tr>
             <tr>
                 <td colspan="2">
-                    <input type="submit" class="btn btn-primary" value="Actualizar datos">
+                    <input type="submit" class="btn btn-primary" style="background:#2b58cf;" value="Actualizar datos">
                 </td>
             </tr>
         </tbody>

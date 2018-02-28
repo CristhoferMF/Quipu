@@ -13,6 +13,7 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
 <head>
 	<title>Seguimiento | Alumno <?php echo $result[14]?></title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../assets/css/udpate.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -35,11 +36,9 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
     </div>
   </div>
 </div>
-
-  <div class="container" style="margin-top:40px;max-width:850px;">
      <!-- Static navbar -->
       <nav class="navbar navbar-default">
-        <div class="container-fluid">
+        <div class="container-fluid center-block" style="float: none;max-width:850px;">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
               <span class="sr-only">Toggle navigation</span>
@@ -69,11 +68,12 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
+      <div class="container" style="margin-top:40px;max-width:850px;">
       <div class="panel panel-primary">
-       <div class="panel-heading" style="background:#2b58cf;">INFORMACION DE ALUMNO</div>
+       <div class="panel-heading" style="background:#2b58cf;">Informacion de alumno</div>
   <div class="panel-body text-center" style="overflow-y:auto;">
         <h1>ID: <?php echo $result[14]?></h1>
-        <table class="table table_bordered table-hover" style="max-width:850px;margin:auto;font-size: 12px;">
+        <table class="table table_bordered table-hover" style="max-width:850px;margin:auto;">
         <tbody>
             <tr>
                 <td class="" style="font-weight:bold;">APELLIDOS Y NOMBRES</td>
@@ -140,14 +140,14 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
    </div>
   </div>
    <div class="panel panel-primary">
-       <div class="panel-heading" style="background:#2b58cf;">INFORMACION DE EMPRESA</div>
+       <div class="panel-heading" style="background:#2b58cf;">Informacion de empresa</div>
   <div class="panel-body text-center" style="overflow-y:auto;">
      <?php 
     if($result[44]=='00000'){
        echo "<h3>Sin Empresa</h3>";
     }else{
     ?>
-      <table class="table table_bordered table-hover" style="max-width:850px;margin:auto;font-size: 12px;">
+      <table class="table table_bordered table-hover" style="max-width:850px;margin:auto;">
         <tbody>
             <tr>
                 <td class="" style="font-weight:bold;">RUC EMPRESA</td>
@@ -224,7 +224,7 @@ if(!$info_estudiante or mysqli_num_rows($info_estudiante)==0){
        <div class="panel panel-primary">
        <div class="panel-heading" style="background:#2b58cf;">INFORMACION DE MONITOR</div>
   <div class="panel-body text-center" style="overflow-y:auto;"> 
-      <table class="table table_bordered table-hover" style="max-width:850px;margin:auto;font-size: 12px;">
+      <table class="table table_bordered table-hover" style="max-width:850px;margin:auto;">
         <tbody>
             <tr>
                 <td class="" style="font-weight:bold;">DNI MONITOR</td>

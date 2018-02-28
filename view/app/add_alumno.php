@@ -25,10 +25,9 @@
     </script>
 </head>
 <body>
-  <div class="container" style="margin-top:40px;max-width:850px;border-left:1px solid #d3d3d3;border-right:1px solid #d3d3d3;">
      <!-- Static navbar -->
       <nav class="navbar navbar-default">
-        <div class="container-fluid">
+        <div class="container-fluid center-block" style="float: none;max-width:850px;">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
               <span class="sr-only">Toggle navigation</span>
@@ -45,6 +44,7 @@
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
+        <div class="container" style="margin-top:40px;max-width:850px;">
       <div class="panel panel-primary">
        <div class="panel-heading" style="background:#2b58cf;">Agregar alumno</div>
   <div class="panel-body text-center" style="overflow-x:auto;">
@@ -126,7 +126,7 @@
             </tr>
             <tr>
                 <td colspan="2" class="text-center">
-                    <input type="submit" class="btn btn-primary" value="Agregar Alumno">
+                    <input type="submit" class="btn btn-primary" style="background:#2b58cf;" value="Agregar Alumno">
                 </td>
             </tr>
         </tbody>
