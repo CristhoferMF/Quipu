@@ -11,6 +11,15 @@ require_once '../../controller/empresa_controller.php';
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta charset="utf-8">
+    <script type="text/javascript">
+    $(document).on("click","#chk",function(){
+      if( $(this).is(':checked') ){
+      alert($(this).val()+" encendido");
+    }else{
+        alert($(this).val()+" apagado");
+      }
+    });
+  </script>
 </head>
 <body>
 
@@ -76,8 +85,9 @@ require_once '../../controller/empresa_controller.php';
     <tbody>
         <?php while($result=mysqli_fetch_array($all_empresas)){
                 echo "<tr style='font-size:12px;'>
-                <td nowrap><a href='empresa/-$result[0]' title='$result[1]'>$result[0]</a></td>
-                <td nowrap>$result[1]</td>
+                <td nowrap><input type='checkbox' id='chk' value='$result[0]'></td>
+                <td nowrap id='ruc'><a href='empresa/-$result[0]' title='$result[1]'>$result[0]</a></td>
+                <td nowrap id='semestre'>$result[1]</td>
                 <td nowrap>$result[2]</td>
                 <td nowrap>$result[3]</td>
                 <td nowrap>$result[4]</td>

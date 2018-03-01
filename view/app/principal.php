@@ -11,6 +11,7 @@ require_once '../../controller/estudiantes_controller.php';
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<meta charset="utf-8">
+
 </head>
 <body>
      <!-- Static navbar -->
@@ -99,9 +100,9 @@ require_once '../../controller/estudiantes_controller.php';
 		<tbody>
 		    <?php while($result=mysqli_fetch_array($all_estudiantes)){
                 echo "<tr style='font-size:12px;'>
-                <td nowrap>$result[0]</td>
-                <td nowrap>$result[1]</td>
-                <td nowrap>$result[2]</td>
+                <td nowrap id='semestre'>$result[0]</td>
+                <td nowrap id='semestre'>$result[1]</td>
+                <td nowrap id='semestre'>$result[2]</td>
                 <td nowrap>$result[3]</td>
                 <td nowrap><a href='$result[4]' title='$result[7] $result[8]'>$result[4]</a></td>
                 <td nowrap>$result[5]</td>
