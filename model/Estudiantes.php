@@ -110,6 +110,21 @@ on empresa.ruc=sede.ruc_empresa_sede where empresa.ruc like '$ruc%'";
         return $query=$this->mysqli->query($query_tab);
   
     }
+    public function create_empresa($ruc,$razon,$departamento,$provincia,$distrito,$direccion,$referencia,$estado,$nombre,$actividad,$dni,$cantidad,$telefono,$email){
+        $query_tab="INSERT INTO empresa values('$ruc','$razon','$nombre','$dni',$cantidad,'$actividad','$estado')";
+        $query_tab2="INSERT INTO sede values('$ruc"."-0"."','$ruc','$direccion','$departamento','$provincia','$distrito','$referencia','$telefono','$email','ACTIVO')";
+        $query=$this->mysqli->query($query_tab);
+        if($query){
+            $query2=$this->mysqli->query($query_tab2);
+            if(!$query2){
+                return "ERROR 2 SENTENCIA SEDE";
+            }else{
+                return "Empresa agregada con éxito";
+            }
+        }else{
+            return "ERROR 1 SENTENCIA EMPRESA";
+        }
+    }
     public function create_alumno($id,$apellidos,$nombres,$cfp,$carrera,$semestre,$bloque,$ciclo,$diaclase,$telefono,$celular,$email,$domicilio,$horario,$puesto,$empresa,$iniciosem,$finsemin){
         $query_tab="INSERT INTO estudiante values($id,0,'$apellidos','$nombres','$cfp','$carrera','$semestre','$bloque','$ciclo','$diaclase','$telefono','$celular','$email','$domicilio','$horario','$puesto','$empresa','$iniciosem','$finsemin','ACTIVO')";
         $query_tab2="INSERT INTO historico values(NULL,0,'00000-0',$id,'00000-0','$cfp','$carrera','$bloque','$ciclo',NULL,NULL,NULL,'$semestre','ACTIVO')";

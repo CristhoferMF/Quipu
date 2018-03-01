@@ -9,7 +9,7 @@
 	<meta charset="utf-8">
 	<script>
     $(document).on("submit","#id-form",function(e){
-        var url="../../ajax/add_alumno.php";
+        var url="../../../ajax/add_empresa.php";
         e.preventDefault();
         $.ajax({
             type:'post',
@@ -18,7 +18,6 @@
             success:function(data){
                 alert(data);
                 $('#id-form')[0].reset();
-                $('#semestre-id').val("2018-01");
             }   
         });
     });
@@ -169,7 +168,7 @@
                 <td class="" style="font-weight:bold;">Telefono empresa</td>
                 <td><input type="text" style="min-width: 150px;" placeholder="XXXXXXXXX" name="txt-telefono-empresa"></input></td>
                 <td class="" style="font-weight:bold;">Email empresa</td>
-                <td><input type="text" style="min-width: 70px;" placeholder="empresa@ejemplo.com" name="txt-empresa-email"></input></td>
+                <td><input type="text" style="min-width: 70px;" placeholder="empresa@ejemplo.com" name="txt-empresa-email" required></input></td>
             </tr>
             <tr>
                 <td colspan="4" class="text-center">
